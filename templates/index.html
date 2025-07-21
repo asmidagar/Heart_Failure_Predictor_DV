@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Heart Failure Prediction</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-image: url("/static/background.jpeg");
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+        }
+
+        .container {
+            width: 600px;
+            margin: 60px auto;
+            padding: 40px;
+            background-color: rgba(255, 255, 255, 0.9); /* translucent white */
+            border-radius: 15px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+        }
+
+        h2 {
+            text-align: center;
+            color: #007bff;
+            margin-bottom: 25px;
+        }
+
+        input[type=number] {
+            width: 100%;
+            padding: 12px;
+            margin: 10px 0;
+            box-sizing: border-box;
+            border-radius: 6px;
+            border: 1px solid #ccc;
+            font-size: 16px;
+        }
+
+        input[type=submit] {
+            background-color: #007bff;
+            color: white;
+            padding: 12px;
+            border: none;
+            width: 100%;
+            cursor: pointer;
+            font-size: 18px;
+            border-radius: 6px;
+        }
+
+        input[type=submit]:hover {
+            background-color: #0056b3;
+        }
+
+        .result {
+            margin-top: 25px;
+            text-align: center;
+            font-weight: bold;
+            font-size: 20px;
+            color: #28a745;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <h2>❤️ Heart Failure Risk Predictor</h2>
+    <form method="POST" action="/predict">
+        <input type="number" name="age" placeholder="Age" required>
+        <input type="number" name="anaemia" placeholder="Anaemia (1 = Yes, 0 = No)" required>
+        <input type="number" name="diabetes" placeholder="Diabetes (1 = Yes, 0 = No)" required>
+        <input type="number" name="ejection_fraction" placeholder="Ejection Fraction" required>
+        <input type="number" name="high_blood_pressure" placeholder="High BP (1 = Yes, 0 = No)" required>
+        <input type="number" name="serum_sodium" placeholder="Serum Sodium" required>
+        <input type="number" name="sex" placeholder="Sex (1 = Male, 0 = Female)" required>
+        <input type="number" name="smoking" placeholder="Smoking (1 = Yes, 0 = No)" required>
+        <input type="number" name="time" placeholder="Follow-up Time (in days)" required>
+        <input type="number" name="log_cpk" placeholder="Log CPK" required>
+        <input type="number" name="log_platelets" placeholder="Log Platelets" required>
+        <input type="number" name="log_serum_creatinine" placeholder="Log Serum Creatinine" required>
+        <input type="submit" value="Predict">
+    </form>
+    {% if prediction_text %}
+        <div class="result">{{ prediction_text }}</div>
+    {% endif %}
+</div>
+</body>
+</html>
