@@ -106,7 +106,7 @@ Special thanks to the instructors and mentors who guided us throughout the bootc
 ## ✍️ Author
 
 **Asmi Dagar**
-GitHub: [github.com/yourusername](https://github.com/yourusername)
+GitHub: [asmidagar](https://github.com/asmidagar)
 
 ---
 
@@ -114,5 +114,4 @@ GitHub: [github.com/yourusername](https://github.com/yourusername)
 
 This project is open-source and available under the [MIT License](LICENSE).
 
-```
 
